@@ -35,15 +35,36 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, #{name}"
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  if s.length == 0
+    return false
+  end
+  if s.slice(0.1).match?(/[A-za-z]/)
+    if ['A','E','I','O','U'].include? s.slice(0,1).upcase
+      return false
+    else 
+      return true
+    end
+  else
+    return false
+  end
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if s.length == 0
+    return false
+  end
+  if s.count('01') == s.size
+    x = s.to_i
+    if x % 4 == 0
+        return true
+    end
+  else
+    return false
+  end
 end
 
 # Part 3
