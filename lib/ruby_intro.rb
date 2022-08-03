@@ -3,15 +3,33 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  arr.sum
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+ if arr.length() == 0
+    return 0
+ elsif arr.length() == 1
+    return arr[0]
+ else
+    max_arr = arr.max(2)
+    return max_arr[0] + max_arr[1]
+ end
+
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  x = arr.length()
+  c = 1
+  arr.each do |a|
+    (arr.slice(c,x)).each do |b|
+        if (a+b) == n
+            return true
+        end
+    end
+    c += 1
+end
+return false
 end
 
 # Part 2
