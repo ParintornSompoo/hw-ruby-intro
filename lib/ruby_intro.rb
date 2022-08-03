@@ -70,5 +70,20 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+    def initialize(isbn,price)
+      if isbn.size == 0
+        raise ArgumentError
+      end
+      if price <= 0
+        raise ArgumentError
+      end
+      @isbn = isbn
+      @price = price
+    end
+    attr_accessor :isbn
+    attr_accessor :price
+
+    def price_as_string
+      return "$%.2f" % price
+    end
 end
